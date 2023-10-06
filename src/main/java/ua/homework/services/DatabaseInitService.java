@@ -6,13 +6,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
+
 
 
 public class DatabaseInitService {
     private static final String PATH_INIT_DB_SQL = "./sql files/init_db.sql";
 
-    public static void main(String[] args) {
+    public  void initService() {
         try {
             String sql = String.join("\n", Files.readAllLines(Paths.get(PATH_INIT_DB_SQL)));
             Connection conn = Database.getInstance().getConnection();

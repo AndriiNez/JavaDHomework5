@@ -13,7 +13,7 @@ import java.sql.Statement;
 public class DatabasePopulateService {
     private static final String PATH_POPULATE_DB_SQL = "./sql files/populate_db.sql";
 
-    public static void main(String[] args) {
+    public void populateService() {
         try {
             String sql = String.join("\n", Files.readAllLines(Paths.get(PATH_POPULATE_DB_SQL)));
             Connection conn = Database.getInstance().getConnection();

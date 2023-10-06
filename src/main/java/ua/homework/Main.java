@@ -1,12 +1,19 @@
 package ua.homework;
 
 import ua.homework.dto.*;
+import ua.homework.services.DatabaseInitService;
+import ua.homework.services.DatabasePopulateService;
 import ua.homework.services.DatabaseQueryService;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        DatabaseInitService initService = new DatabaseInitService();
+        initService.initService();
+
+        DatabasePopulateService populateService = new DatabasePopulateService();
+        populateService.populateService();
 
         List<MaxProjectCountClient> maxProjectCountClients = new DatabaseQueryService().findMaxProjectsClient();
         for (MaxProjectCountClient client : maxProjectCountClients) {
